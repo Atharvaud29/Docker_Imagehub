@@ -7,13 +7,6 @@ on:
         branches: [ main ]
 
 jobs:
-    # dockerbuild:
-    #     runs-on: ubuntu-latest
-    #     steps:
-    #         - uses: actions/checkout@v4
-    #         - name: Build the Docker Image
-    #           run: docker build . --file DockerFile --tag workflow-test:$(date +%s)
-
     build-and-test:
         runs-on: ubuntu-latest
 
@@ -57,13 +50,9 @@ jobs:
               uses: docker/build-push-action@v4
               with:
                 context: .
-                # file: ./DockerFile
                 push: true
                 tags: ${{ secrets.DOCKER_USERNAME }}/flasktest-app:latest
 
             - name: Image digest
-<<<<<<< HEAD
               run: echo ${{ steps.build-and-publish.outputs.digest }}
-=======
-              run: echo ${{ steps.build-and-push.outputs.digest }}
->>>>>>> 73fb3dd3d2e1a3608977a35ec843321eae5cd216
+
