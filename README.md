@@ -98,6 +98,8 @@ In cicd.yml file write down github action workflow code
 As soon as you commit this in your github repro then github action workflow will run.
 This will first run the Build-and-test job then it will run the next Build-and-publish job.
 
+![Screenshot 2025-02-17 185459](https://github.com/user-attachments/assets/d5f69f37-62ea-44e3-a346-28f98a0e7b51)
+
 After successful runnig the workflow, you can see an image is created in your docker hub. 
         
 Docker hub image :
